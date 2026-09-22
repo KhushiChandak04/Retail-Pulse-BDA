@@ -1,0 +1,4 @@
+pandas>=2.2,<3.0
+pyarrow>=18,<22
+pyspark[sql]>=4.2,<4.3
+pytest>=8.0,<9.0

@@ -1,0 +1,29 @@
+
+RETAILPULSE QUICK START
+
+1. Open this folder in VS Code.
+
+2. Create a virtual environment:
+   python -m venv .venv
+
+3. Activate it in PowerShell:
+   .venv\Scripts\activate
+
+4. Install dependencies:
+   python -m pip install --upgrade pip
+   pip install -r requirements.txt
+
+5. Make sure Java 17+ is installed and JAVA_HOME is configured.
+
+6. Run:
+   python src/run_project.py
+
+7. Open outputs/ and verify the generated CSV files.
+
+8. Open Power BI Desktop.
+
+9. Import:
+   outputs/sales_transactions.csv
+
+10. Follow:
+    powerbi/dashboard_guide.md
