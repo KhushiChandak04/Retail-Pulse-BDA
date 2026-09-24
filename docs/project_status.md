@@ -23,12 +23,12 @@
 - Verified all expected output CSV files and their key headers.
 - Verified validation status is PASS for all compared metrics.
 - Verified Git LFS 3.5.1 is installed and the processed file is 114.35 MB.
+- Committed and pushed the processed dataset through Git LFS to `origin/main`.
 
 ## Remaining
 
 - Build and format the dashboard in Power BI Desktop.
 - Add screenshots and interpretation to the academic report.
-- Add, commit, and push the processed dataset with Git LFS.
 - Complete final GitHub review and confirm only intended files are tracked.
 - Rehearse the project demonstration and viva answers.
 
@@ -55,7 +55,7 @@
 - [x] Key results are independently validated
 - [x] Power BI input file is ready
 - [x] Documentation is updated
-- [ ] Processed dataset committed and pushed through Git LFS
+- [x] Processed dataset committed and pushed through Git LFS
 - [ ] Git status is clean after reviewing generated files
 - [ ] Power BI dashboard is built manually
 - [ ] Report, presentation, demo, and viva preparation are complete
