@@ -1,0 +1,2 @@
+total_rows,cleaned_rows,unique_invoices,unique_products,identifiable_customers,countries,missing_customer_rows,rows_without_customer_id,cancellation_rows,flagged_duplicate_rows
+1067371,1067371,53628,5304,5942,43,243007,243007,22951,67242

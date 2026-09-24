@@ -1,0 +1,4 @@
+customer_segment,customers,average_customer_spend,average_order_frequency
+Repeat Customer,2454,1201.58,3.11
+Frequent Customer,1801,7899.27,15.39
+One-time Customer,1623,350.08,1.0
