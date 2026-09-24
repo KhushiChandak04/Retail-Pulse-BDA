@@ -73,6 +73,10 @@ DIVIDE([Total Revenue], [Total Orders])
 - Value: Total Revenue
 - Apply Top N = 10
 
+Use `month` from `outputs/monthly_sales.csv` for the monthly trend when you
+want the already aggregated Spark SQL result. Use `invoice_date` from `Sales`
+when you want date slicers to affect the fact table directly.
+
 **Revenue by Country**
 - Bar chart or map
 - Location: country
@@ -96,7 +100,11 @@ Display:
 - Recency
 - Unique products
 
-## Page 3 — Returns / Cancellations
+The customer segments are project-defined thresholds: one order is One-time,
+2-5 orders is Repeat, and more than 5 orders is Frequent. They are not labels
+provided by the source dataset.
+
+## Page 3 — Cancellation Analysis
 
 Import:
 
@@ -109,6 +117,7 @@ Display:
 - Cancellation invoices by month
 - Cancelled units by month
 - Cancellation value by month
+- Cancellation trend
 
 ## Suggested slicers
 
@@ -116,6 +125,9 @@ Display:
 - Country
 - Product
 - Customer ID
+
+Cancellation rows are retained in the cleaned dataset, but they are excluded
+from `Sales` and therefore do not inflate sales KPIs.
 
 ## Viva explanation
 

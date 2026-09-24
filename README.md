@@ -30,6 +30,11 @@ Analyze real-world online retail transaction data to understand:
 - Git / GitHub
 - VS Code
 
+Hadoop/HDFS, Hive, Kafka, databases, machine learning, and web frameworks are
+intentionally outside this software-only project scope. PySpark includes the
+Hadoop filesystem libraries internally, but this project does not require a
+separate Hadoop installation or HDFS cluster.
+
 ## Dataset
 
 The supplied dataset is **Online Retail II**, a real-world retail transaction dataset.
@@ -41,6 +46,11 @@ data/raw/online_retail_II.csv
 ```
 
 The raw CSV is intentionally ignored by Git because of its size. See `docs/dataset_analysis.md` for the profile and cleaning decisions.
+
+The processed dataset is shared as a Git LFS asset at
+`data/processed/cleaned_retail_transactions.csv` so teammates can work from
+the same cleaned data without rerunning the full cleaning step. Git LFS must be
+installed before cloning or pulling this repository.
 
 ## Architecture
 
@@ -147,15 +157,23 @@ The distinction is intentional and is documented in `docs/dataset_analysis.md`.
 
 ## Setup
 
-Use Python 3.10+ and Java 17+ with PySpark 4.2.x. The project installs the Spark SQL extras so the required SQL-side Python dependencies are included.
+Use Python 3.10+ (Python 3.12 is recommended) and Java 17+ with PySpark 4.2.x.
+The project runs Spark in local mode and does not require Hadoop/HDFS.
 
 From the repository root:
 
 ```powershell
-python -m venv .venv
+py -3.12 -m venv .venv
 .venv\Scripts\activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+If the processed dataset is not present after cloning, install Git LFS and run:
+
+```powershell
+git lfs install
+git lfs pull
 ```
 
 Then run:
@@ -178,8 +196,12 @@ outputs/
 ├── customer_analysis.csv
 ├── customer_segments.csv
 ├── cancellation_analysis.csv
+├── validation_summary.csv
 └── sales_transactions.csv
 ```
+
+`validation_summary.csv` compares independently calculated Pandas metrics with
+Spark SQL results and reports the difference and PASS/FAIL status.
 
 ## Power BI
 

@@ -3,8 +3,8 @@ RETAILPULSE QUICK START
 
 1. Open this folder in VS Code.
 
-2. Create a virtual environment:
-   python -m venv .venv
+2. Create the single project virtual environment with Python 3.12:
+   py -3.12 -m venv .venv
 
 3. Activate it in PowerShell:
    .venv\Scripts\activate
@@ -13,12 +13,20 @@ RETAILPULSE QUICK START
    python -m pip install --upgrade pip
    pip install -r requirements.txt
 
-5. Make sure Java 17+ is installed and JAVA_HOME is configured.
+   Install Git LFS separately and pull the shared processed dataset:
+   git lfs install
+   git lfs pull
+
+5. Make sure Java 17+ is installed. PySpark runs in local mode; Hadoop/HDFS is
+   not required for this project.
 
 6. Run:
    python src/run_project.py
 
 7. Open outputs/ and verify the generated CSV files.
+
+   This includes validation_summary.csv, which compares independent Pandas
+   metrics with the Spark SQL results.
 
 8. Open Power BI Desktop.
 

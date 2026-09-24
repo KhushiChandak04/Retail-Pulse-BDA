@@ -38,5 +38,9 @@ def test_clean_retail_data(tmp_path):
         "invoice_date", "price", "customer_id", "country"
     ]
     assert result.loc[0, "revenue"] == 20.0
+    assert bool(result.loc[0, "is_valid_sale"])
     assert bool(result.loc[1, "is_cancellation"])
+    assert not bool(result.loc[1, "is_valid_sale"])
     assert result.loc[1, "description"] == "Unknown Product"
+    assert pd.isna(result.loc[2, "customer_id"])
+    assert bool(result.loc[2, "is_valid_sale"])

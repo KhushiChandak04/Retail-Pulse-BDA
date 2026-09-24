@@ -5,6 +5,7 @@ __pycache__/
 .coverage
 
 .venv/
+.venv-1/
 venv/
 env/
 
@@ -13,6 +14,8 @@ env/
 spark-warehouse/
 metastore_db/
 derby.log
-
-
 powerbi/~$*
+data/processed/*.csv
+!data/processed/cleaned_retail_transactions.csv
+outputs/*.csv
+outputs/_tmp_*/
