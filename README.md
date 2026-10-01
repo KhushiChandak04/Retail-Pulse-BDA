@@ -1,4 +1,3 @@
-
 # RetailPulse — E-Commerce Sales and Customer Behaviour Analytics
 
 A Big Data Analytics mini-project built with **Python, Pandas, Apache Spark (PySpark), Spark SQL, CSV, and Power BI**.
@@ -222,6 +221,23 @@ Then build:
 
 See `powerbi/dashboard_guide.md`.
 
+## Streamlit dashboard
+
+Launch the interactive red-themed dashboard from the repository root:
+
+```powershell
+streamlit run streamlit_app.py
+```
+
+The app reads the generated files in `outputs/` and provides interactive
+charts, filters, customer segments, and cancellation analysis. To show the
+published Power BI dashboards inside Streamlit, set
+`POWERBI_DASHBOARD_1_URL`, `POWERBI_DASHBOARD_2_URL`, and
+`POWERBI_DASHBOARD_3_URL` in `.env`, or paste the three URLs directly into the
+sidebar. All three dashboard tabs remain visible even before they are
+connected. `POWERBI_EMBED_URL` is retained as a backward-compatible fallback
+for dashboard 1.
+
 ## GitHub Setup
 
 ```powershell
@@ -238,12 +254,15 @@ The raw dataset is ignored by `.gitignore`, so it will not be pushed to GitHub a
 ## Team Split
 
 ### Member 1
+
 Pandas preprocessing and data-quality analysis.
 
 ### Member 2
+
 PySpark and Spark SQL analytics.
 
 ### Member 3
+
 Power BI dashboard, documentation, and presentation.
 
 All members should understand the complete pipeline for the viva.

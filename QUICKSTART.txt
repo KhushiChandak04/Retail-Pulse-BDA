@@ -35,3 +35,9 @@ RETAILPULSE QUICK START
 
 10. Follow:
     powerbi/dashboard_guide.md
+
+11. Run the Streamlit experience:
+   streamlit run streamlit_app.py
+
+12. Optional: put the published Power BI embed URL in `.env` as
+   `POWERBI_EMBED_URL` to display the live Power BI report inside the app.
